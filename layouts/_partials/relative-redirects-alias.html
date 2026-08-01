@@ -1,0 +1,17 @@
+{{ $result := "" -}}
+{{ if strings.HasPrefix .alias "../" -}}
+  {{ if .p -}}
+    {{ $result = (partial "relative-redirects-alias"
+          (dict
+            "alias" (strings.TrimPrefix "../" .alias)
+            "p" .p.Parent ))
+    -}}
+  {{ else -}}
+    {{ $result = path.Join "/" (strings.TrimPrefix "../" .alias) -}}
+  {{ end -}}
+{{ else if .p -}}
+  {{ $result = path.Join .p.RelPermalink .alias -}}
+{{ else -}}
+  {{ $result = path.Join "/" .alias -}}
+{{ end -}}
+{{ return $result -}}
