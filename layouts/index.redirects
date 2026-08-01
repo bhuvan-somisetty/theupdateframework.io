@@ -34,7 +34,7 @@
 
 {{ $og_image_current := `/img/logos/tuf-horizontal-color.png` -}}
 
-/featured-background.jpg  {{ $og_image_current }} {{- /* homepage og:image used prior to 2022/08 */}}
+/featured-background.jpg  {{ $og_image_current }}  301! {{- /* homepage og:image used prior to 2022/08; force: a file is now published at this path */}}
 
 {{/* Multilingual support */ -}}
 

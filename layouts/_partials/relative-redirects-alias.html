@@ -1,3 +1,10 @@
+{{/*
+  Extracted from layouts/index.redirects's inline `define` block (cleanup,
+  not a rendering fix: Hugo's cond does not short-circuit, so the inline
+  version already ran for every alias). Also changed in this extraction:
+  the ".p" nil case, which previously errored, now falls back to
+  path.Join "/" .alias instead.
+*/ -}}
 {{ $result := "" -}}
 {{ if strings.HasPrefix .alias "../" -}}
   {{ if .p -}}

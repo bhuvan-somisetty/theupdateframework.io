@@ -20,7 +20,7 @@ to = "https://theupdateframework.github.io/specification/:splat"
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "default-src 'self'; script-src 'self' code.jquery.com cse.google.com www.google.com app.netlify.com netlify-cdp-loader.netlify.app; style-src 'self' 'unsafe-inline' fonts.googleapis.com use.fontawesome.com; font-src 'self' fonts.gstatic.com use.fontawesome.com; img-src 'self' data: cse.google.com www.google.com; frame-src 'self' youtube.com www.youtube.com"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' code.jquery.com cse.google.com www.google.com app.netlify.com netlify-cdp-loader.netlify.app; connect-src 'self' app.netlify.com netlify-cdp-loader.netlify.app; style-src 'self' fonts.googleapis.com use.fontawesome.com; font-src 'self' fonts.gstatic.com use.fontawesome.com; img-src 'self' data: cse.google.com www.google.com; frame-src 'self' youtube.com www.youtube.com"
     X-Frame-Options = "deny"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "no-referrer-when-downgrade"

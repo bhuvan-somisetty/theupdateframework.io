@@ -10,14 +10,8 @@
   fill: white;
 }
 
-// Homepage: it will need to be updated when the hero image is changed.
-
-#td-cover-block-0 {
-  background-image: url(/featured-background.jpg);
-}
-
-@media only screen and (min-width: 1200px) {
-  #td-cover-block-0 {
-    background-image: url(/featured-background.jpg);
-  }
-}
+// Homepage hero background: generated at build time as an external
+// stylesheet by layouts/_shortcodes/blocks/cover.html (an override of the
+// Docsy shortcode of the same name), so it always references Hugo's
+// current processed image derivatives instead of a hardcoded hash. See
+// https://github.com/theupdateframework/theupdateframework.io/issues/139
