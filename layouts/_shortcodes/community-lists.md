@@ -1,5 +1,5 @@
 {{ $links := .Site.Params.links -}}
-{{ $contribUrl := .Page.Params.contributingUrl | default "docs/contribution-guidelines" -}}
+{{ $contribUrl := .Page.Params.contributingUrl | default "/docs/contributing/" -}}
 
 <p>{{ T "community_introduce" . }}</p>
 
