@@ -1,19 +1,19 @@
-{{ $key       := .Get 0 }}
-{{ $adoptions := index site.Data.adoptions $key }}
+{{ $key       := .Get 0 -}}
+{{ $adoptions := index site.Data.adoptions $key -}}
 <br />
 
 <div class="">
   <div class="adoptions-container">
-    {{ range $adoptions }}
-    {{ $img    := .tag | lower }}
-    {{ $type   := .img_type | default "png" }}
-    {{ $alt    := .alt | default .tag }}
-    {{ $imgUrl := printf "img/%s.%s" $img $type }}
+    {{ range $adoptions -}}
+    {{ $imgName := .img_name | default (printf "%s_logo" (.tag | lower | replaceRE "[^a-z0-9]" "")) -}}
+    {{ $type    := .img_type | default "png" -}}
+    {{ $alt     := .alt | default (printf "%s logo" .tag) -}}
+    {{ $imgUrl  := printf "/img/logos/adoptions/%s.%s" $imgName $type | relURL -}}
     <div class="adoptions-item">
-      <a href="{{ .url }}" target="_blank">
-        <img class="adoptions-logo" src="{{ $imgUrl }}" alt="{{ $alt }} logo">
+      <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">
+        <img class="adoptions-logo" src="{{ $imgUrl }}" alt="{{ $alt }}">
       </a>
     </div>
-    {{ end }}
+    {{ end -}}
   </div>
 </div>
